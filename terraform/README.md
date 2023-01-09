@@ -6,6 +6,12 @@ This section shows how to deploy and manage a public AKS cluster using your loca
 - A console (bash or zsh in this case) where you have admin rights
 - An Azure subscription
 - [Terraform CLI](https://www.terraform.io/downloads)
+- **Important**: Register the required providers with the following command:
+```sh
+az provider register --namespace Microsoft.Kubernetes
+az provider register --namespace Microsoft.ContainerService
+az provider register --namespace Microsoft.KubernetesConfiguration
+```
 
 ## Setting up the environment
 Once you have an [Azure account](https://azure.microsoft.com/en-us/free/search/), an Azure subscription, and can sign into the [Azure Portal](https://portal.azure.com/), open a console session.
@@ -50,7 +56,7 @@ Now you can plan and apply your infrastructure changes by executing `terraform p
 ```sh
 terraform plan
 # Check your plan and feel free to use it in the next command (we're just running apply as-is)
-terraform apply
+terraform apply -auto-approve
 ```
 
 ## Connecting to the control plane (using the cluster)
@@ -65,11 +71,15 @@ sudo az aks install-cli
 $(terraform output -raw credentials_command)
 ```
 
-We're all set now and can use kubectl on our private AKS cluster. To test it, run the following command to get your cluster's kube-system pods:
+We're all set now and can use kubectl on our public AKS cluster. To test it, run the following command to get your cluster's kube-system pods:
 ```sh
 kubectl get pods -n kube-system
 ```
 
-# Flux [TODO]
+**IMPORTANT**: remember that this cluster will only let you connect to it from the original public IP address from which you executed `terraform apply`. If your client device's public IP address changes for some reason (you move locations or your ISP changes it because it's dynamic), you just need to re-run `terraform apply -auto-approve` so that terraform modifies your control plane to allow connections from your new IP address (keep in mind that your old IP address will be removed from the list of authorized addresses).
+
+# Flux
+
+When the terraform code
 
 Happy kuberneting!

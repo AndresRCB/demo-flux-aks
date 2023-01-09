@@ -1,7 +1,17 @@
+variable "gitops_repo_url" {
+  type = string
+  description = "URL of the git repo to use for GitOps for this demo cluster"
+}
+
 variable "resource_group_name" {
   type        = string
   description = "Name of the existing resource group to create the cluster in"
-  default     = "rg-flux-aks-demo"
+}
+
+variable "gitops_branch_name" {
+  type = string
+  description = "Branch with which configuration will be synced"
+  default = "main"
 }
 
 variable "location" {

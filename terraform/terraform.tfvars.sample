@@ -1,8 +1,10 @@
 # Required variables
-resource_group_name = "rg-demo-flux-aks"
+resource_group_name = "rg-flux-aks-demo"
+gitops_repo_url = "https://github.com/USER_OR_ORG/REPO_NAME.git"
 
 ## VALUES BELOW ARE DEFAULT VALUES. UNCOMMENT AND CHANGE TO OVERRIDE
 
+# gitops_branch_name = "main"
 # location = "eastus"
 # cluster_dns_prefix = "fluxdemo"
 # cluster_name = "cluster-flux-demo"
