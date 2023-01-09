@@ -41,7 +41,7 @@ resource "azapi_resource" "flux_config" {
   body = jsonencode({
     properties = {
       scope      = "cluster"
-      namespace  = "flux-system"
+      namespace  = "cluster-config"
       sourceKind = "GitRepository"
       suspend    = false
       gitRepository = {

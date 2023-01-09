@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: bitnami
         namespace: cluster-config
-      version: "9.1.11"
+      version: ">=9.3.25"
   interval: 1h0m0s
   install:
     remediation:
@@ -22,6 +22,6 @@ spec:
   # https://github.com/bitnami/charts/blob/master/bitnami/nginx-ingress-controller/values.yaml
   values:
     service:
-      type: NodePort
+      type: LoadBalancer
     ingressClassResource:
       name: nginx

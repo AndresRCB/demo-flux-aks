@@ -6,12 +6,7 @@ This section shows how to deploy and manage a public AKS cluster using your loca
 - A console (bash or zsh in this case) where you have admin rights
 - An Azure subscription
 - [Terraform CLI](https://www.terraform.io/downloads)
-- **Important**: Register the required providers with the following command:
-```sh
-az provider register --namespace Microsoft.Kubernetes
-az provider register --namespace Microsoft.ContainerService
-az provider register --namespace Microsoft.KubernetesConfiguration
-```
+- Registering the Microsoft.Kubernetes, Microsoft.ContainerService and Microsoft.KubernetesConfiguration providers in your Azure subscription (see below for steps to acomplish this)
 
 ## Setting up the environment
 Once you have an [Azure account](https://azure.microsoft.com/en-us/free/search/), an Azure subscription, and can sign into the [Azure Portal](https://portal.azure.com/), open a console session.
@@ -34,7 +29,15 @@ az account show -o table
 # az account set -n YOUR_SUBSCRIPTION_NAME
 ```
 
-Once Azure CLI is authenticated, the Terraform CLI tool will use your azure credentials to manage infrastructure. Now you are ready to start deploying infrastructure with Terraform.
+Once Azure CLI is authenticated, you'll be able to deploy infrastructure with it and with the Terraform CLI tool, which will use your azure credentials to manage infrastructure.
+
+## Registering the necessary providers in your Azure subscription
+Before you continue, register the required providers with the following command:
+```sh
+az provider register --namespace Microsoft.Kubernetes
+az provider register --namespace Microsoft.ContainerService
+az provider register --namespace Microsoft.KubernetesConfiguration
+```
 
 ## Creating the Infrastruture
 In this section, we will instruct terraform to create our infrastructure.
