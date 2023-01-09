@@ -63,7 +63,7 @@ resource "azapi_resource" "flux_config" {
           syncIntervalInSeconds  = 60
           retryIntervalInSeconds = 60
           prune                  = true
-          force                  = false
+          force                  = true
         }
         apps = {
           path                   = "cluster-config/apps/staging"
@@ -72,7 +72,7 @@ resource "azapi_resource" "flux_config" {
           syncIntervalInSeconds  = 60
           retryIntervalInSeconds = 60
           prune                  = true
-          force                  = false
+          force                  = true
         }
       }
     }
