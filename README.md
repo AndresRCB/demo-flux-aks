@@ -10,3 +10,4 @@ Follow the instructions and files in the [Terraform](/terraform/) folder
 - [Getting started with Azure](https://azure.microsoft.com/en-us/free/search/)
 - [Terraform on Azure](https://docs.microsoft.com/en-us/azure/developer/terraform/overview)
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)
+- [Deploy Applications Using GitOps with Flux v2](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-use-gitops-flux2?tabs=azure-cli)
