@@ -85,6 +85,6 @@ kubectl get pods -n kube-system
 
 When the terraform code runs, it will configure a gitops repo for k8s state management. It will also install all flux operators in the AKS cluster and configure them to sync state with the provided git repository. If you leave as-is, this repo will be used for state. To change that, update the terraform variable `gitops_repo_url` with your own, keeping in mind that you need to update the flux configuration to align with your desired repo structure, release strategy, authentication methods, etc.
 
-Check out [Flux](https://fluxcd.io/) and [Azure documentation]((https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-use-gitops-flux2?tabs=azure-cli)) to understand what and how to change it. You'll need to update the `azapi_resource.flux_config` resource specifically (and/or add new ones depending on your needs).
+Check out [Flux](https://fluxcd.io/) and [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-use-gitops-flux2?tabs=azure-cli) to understand what and how to change it. You'll need to update the `azapi_resource.flux_config` resource specifically (and/or add new ones depending on your needs).
 
 Happy kuberneting!

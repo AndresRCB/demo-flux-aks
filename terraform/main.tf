@@ -7,6 +7,7 @@ module "public_aks_cluster" {
   source = "github.com/AndresRCB/aks-public-cluster"
 
   resource_group_name = azurerm_resource_group.main.name
+  
   depends_on = [
     azurerm_resource_group.main
   ]
