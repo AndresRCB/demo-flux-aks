@@ -10,7 +10,7 @@ spec:
   test:
     enable: false
   values:
-    replicaCount: 1
+    replicaCount: 3
     ingress:
       hosts:
         - host: podinfo.staging
