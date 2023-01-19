@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "main" {
 }
 
 module "public_aks_cluster" {
-  source = "github.com/AndresRCB/aks-public-cluster"
+  source = "github.com/AndresRCB/aks-public-cluster?ref=v0.1.0"
 
   resource_group_name = azurerm_resource_group.main.name
   
